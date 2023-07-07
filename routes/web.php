@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [UserController::class, 'allUsers'])->name('user.allUsers');
-Route::get('/add', [UserController::class, 'addUsers'])->name('user.add');
+Route::controller(UserController::class)->group(function () {
+    Route::get('/', 'allUsers')->name('allusers');
+    Route::get('/add', 'addUsers')->name('adduser');
+    Route::get('/update', 'updateUser')->name('updateuser');
+});

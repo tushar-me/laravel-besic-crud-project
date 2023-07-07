@@ -15,7 +15,7 @@
 
     <div class="container">
         <h1>All Users /
-            <a name="" id="" class="btn btn-info" href="{{ route('user.add') }}" role="button">Add
+            <a name="" id="" class="btn btn-info" href="{{ route('adduser') }}" role="button">Add
                 User</a>
         </h1>
         <div class="table-responsive">
