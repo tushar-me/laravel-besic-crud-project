@@ -20,23 +20,24 @@
                 <li class="breadcrumb-item active" aria-current="page">Update User</li>
             </ol>
         </nav>
-        <form action="" method="post" class="w-50 bg-dark text-white p-5 mx-auto mt-5">
+        <form action="{{ route('updateuser', $data->id) }}" method="post"
+            class="w-50 bg-dark text-white p-5 mx-auto mt-5">
             @csrf
             <div class="mb-3">
                 <label for="exampleInputName" class="form-label">Name</label>
-                <input type="text" class="form-control" name="name" required placeholder="">
+                <input type="text" class="form-control" name="name" required value="{{ $data->name }}">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input type="email" class="form-control" name="email" aria-describedby="emailHelp" required
-                    placeholder="">
+                    value="{{ $data->email }}">
                 <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
                 <label for="exampleInputCity" class="form-label">City</label>
-                <input type="text" class="form-control" name="city" required placeholder="">
+                <input type="text" class="form-control" name="city" required value="{{ $data->city }}">
             </div>
-            <button type="submit" class="btn btn-primary mt-2 ">SUBMIT</button>
+            <button type="submit" class="btn btn-primary mt-2 ">UPDATE</button>
         </form>
     </div>
 

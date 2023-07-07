@@ -15,12 +15,13 @@
 
     <div class="container">
         <h1>All Users /
-            <a name="" id="" class="btn btn-info" href="{{ route('adduser') }}" role="button">Add
+            <a name="" id="" class="btn btn-info" href="{{ route('adduser.view') }}" role="button">Add
                 User</a>
         </h1>
         <div class="table-responsive">
-            <table style="width:auto;"
+            <table
                 class="table mx-auto
+        w-75
         mt-5
         table-striped
         table-hover
@@ -36,30 +37,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                        <td>
-                            <a name="" id="" class="btn btn-warning" href="#"
-                                role="button">Update</a>
-                            <a name="" id="" class="btn btn-danger" href="#"
-                                role="button">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                        <td>Bangladesh dhaka pabna sadar pabna dublia</td>
-                        <td>
-                            <a name="" id="" class="btn btn-warning" href="#"
-                                role="button">Update</a>
-                            <a name="" id="" class="btn btn-danger" href="#"
-                                role="button">Delete</a>
-                        </td>
-                    </tr>
+                    @foreach ($data as $id => $users)
+                        <tr>
+                            <td>{{ $users->id }}</td>
+                            <td>{{ $users->name }}</td>
+                            <td>{{ $users->email }}</td>
+                            <td>{{ $users->city }}</td>
+                            <td>
+                                <a class="btn btn-warning" href="{{ route('updatepage', $users->id) }}"
+                                    role="button">Update</a>
+                                <a class="btn btn-danger" href="{{ route('deleteuser', $users->id) }}"
+                                    role="button">Delete</a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
                 <tfoot>
 

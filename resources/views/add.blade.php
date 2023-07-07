@@ -20,7 +20,7 @@
                 <li class="breadcrumb-item active" aria-current="page">Add User</li>
             </ol>
         </nav>
-        <form action="" method="post" class="w-50 bg-dark text-white p-5 mx-auto mt-5">
+        <form action="{{ route('adduser') }}" method="post" class="w-50 bg-dark text-white p-5 mx-auto mt-5">
             @csrf
             <div class="mb-3">
                 <label for="exampleInputName" class="form-label">Name</label>

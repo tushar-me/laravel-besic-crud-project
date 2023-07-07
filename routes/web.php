@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(UserController::class)->group(function () {
     Route::get('/', 'allUsers')->name('allusers');
-    Route::get('/add', 'addUsers')->name('adduser');
-    Route::get('/update', 'updateUser')->name('updateuser');
+    Route::post('/add', 'addUsers')->name('adduser');
+    // Route::get('/adduser', 'addPage')->name('addpage');
+    Route::post('/update/{id}', 'updateUser')->name('updateuser');
+    Route::get('/updateuser/{id}', 'updatePage')->name('updatepage');
+    Route::get('/delete/{id}', 'deleteUser')->name('deleteuser');
 });
+Route::get('/add', function () {
+    return view('add');
+})->name('adduser.view');
